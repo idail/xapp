@@ -60,17 +60,270 @@ body {
 </style> -->
 
 <style>
-    .imagem {
-        background: url('./doutora.jpg');
-        background-position-x: 0%;
-        background-position-y: 0%;
-        background-repeat: repeat;
-        background-size: auto;
-        background-position: center bottom 0%;
-        background-repeat: no-repeat;
-        background-size: 80%;
-        width: 33.333%;
+    /* Ajuste dos botões */
+    .btn-custom {
+        width: 280px;
+        /* Largura para alcançar os ombros */
+        height: 50px;
+        /* Altura proporcional */
+        font-size: 16px;
+        /* Texto legível */
+        display: flex;
+        justify-content: space-between;
+        /* Organiza texto e seta */
+        align-items: center;
+        /* Centraliza verticalmente */
+        padding: 0 15px;
+        /* Espaçamento interno */
+        white-space: nowrap;
+        /* Impede quebra de linha */
     }
+
+    /* Contêiner dos botões */
+    .botoes-container {
+        gap: 15px;
+        /* Espaçamento entre os botões */
+        margin-top: -140px;
+        /* Ajuste fino para ficar bem próximo aos ombros */
+    }
+
+    /* Ajuste para os ombros da doutora */
+    .hero .col-md-6:first-child {
+        padding-right: 50px;
+        /* Reduz a distância entre os botões e a imagem */
+    }
+
+    /* Estilo de hover */
+    .btn-custom:hover {
+        background-color: #e2e6ea;
+        color: #000;
+    }
+
+    /* Ícone de seta no círculo */
+    .arrow-circle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #00adca;
+        /* Cor do círculo */
+        color: white;
+        font-size: 18px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+    }
+
+    .arrow-circle:hover {
+        background-color: #008bad;
+    }
+
+    .imagem {
+        background: url('./doutora.jpg') no-repeat center bottom;
+        background-size: contain;
+        width: 390px;
+        height: 590px;
+        margin-top: -50px;
+        position: relative;
+        z-index: -1;
+        /* Necessário para o posicionamento */
+    }
+
+    /* Estilo do contêiner da doutora */
+    .imagem-container {
+        position: relative;
+        margin-top: 140px;
+        /* Movendo a doutora para baixo */
+        z-index: 0;
+        /* Garantindo a sobreposição correta */
+    }
+
+
+
+    .hero-text-container p.lead {
+        margin-top: -40px;
+        /* Ajusta o subtítulo na altura da cabeça */
+    }
+
+    .hero-text-container p:last-child {
+        margin-top: 10px;
+        /* Alinha o texto "Mais agilidade, gestão e segurança" */
+    }
+
+    .hero-text-container a {
+        margin-top: 10px;
+        /* Ajusta o botão "Teste Grátis" */
+    }
+
+    /* Ajustes para o layout em telas menores (mobile) */
+    @media (max-width: 768px) {
+
+        .hero-text-container h1,
+        .hero-text-container p {
+            font-size: 28px;
+            /* Ajusta o tamanho da fonte */
+            text-align: center;
+            /* Centraliza o texto */
+        }
+
+        .hero-text-container .lead,
+        .hero-text-container p:last-child {
+            font-size: 20px;
+        }
+
+        .botoes-container {
+            width: 100%;
+            justify-content: center;
+            /* Centraliza os botões */
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            /* Empilha os botões verticalmente */
+            gap: 15px;
+            /* Espaçamento entre os botões */
+        }
+
+        .botoes-container button {
+            width: 100%;
+            /* Faz os botões ocuparem toda a largura */
+        }
+
+        /* Organiza os textos verticalmente */
+        .hero-text-container {
+            display: flex;
+            flex-direction: column;
+            /* Coloca os itens um abaixo do outro */
+            align-items: center;
+            /* Centraliza os itens */
+            margin-top: 50px;
+            /* Adiciona margem superior para ajustar os textos para baixo */
+        }
+
+        /* Esconde a imagem da doutora em telas pequenas */
+        .imagem-container {
+            display: none;
+        }
+    }
+
+    /* Ajustes para telas muito pequenas (inferiores a 400px) */
+    @media (max-width: 400px) {
+
+        /* Esconde a imagem da doutora em telas menores que 400px */
+        .imagem-container {
+            display: none;
+        }
+
+        /* Ajusta os textos e botões para ficarem empilhados verticalmente */
+        .hero-text-container {
+            display: flex;
+            flex-direction: column;
+            /* Empilha os itens de texto e botões verticalmente */
+            align-items: center;
+            /* Centraliza os itens */
+            margin-top: 40px;
+            /* Ajusta mais a posição para baixo */
+        }
+
+        .hero-text-container h1,
+        .hero-text-container p,
+        .botoes-container button {
+            width: 100%;
+            /* Faz os itens ocuparem toda a largura */
+            text-align: center;
+            /* Centraliza os textos */
+        }
+
+        .hero-text-container h1 {
+            font-size: 24px;
+            /* Ajusta o tamanho da fonte */
+        }
+
+        .hero-text-container p {
+            font-size: 18px;
+            /* Ajusta o tamanho da fonte */
+        }
+
+        .imagem-container .imagem {
+            display: none;
+        }
+
+        .hero .col-md-6:first-child {
+            padding-right: 5px;
+        }
+
+        .titulo {
+            margin-bottom: 4rem !important;
+        }
+
+        /* Ajuste para posicionar o texto na altura da cabeça da doutora */
+        .hero-text-container h1 {
+            margin-top: -120px;
+            /* Eleva o título até a altura da cabeça */
+        }
+    }
+
+    /* Ajustes para o desktop (acima de 769px) */
+    @media (min-width: 769px) {
+        .hero-text-container h1 {
+            font-size: 45px;
+        }
+
+        .hero-text-container p {
+            font-size: 45px;
+        }
+
+        .botoes-container {
+            width: 780px;
+            justify-content: flex-start;
+            margin-top: 170px !important;
+            display: flex;
+            gap: 20px;
+            /* Espaçamento maior entre os botões */
+        }
+
+        .botoes-container button {
+            width: auto;
+            /* Largura automática nos desktops */
+        }
+
+        .imagem-container .imagem {
+            background: url('./doutora.jpg') no-repeat center bottom;
+            background-size: contain;
+            width: 390px;
+            height: 590px;
+        }
+
+        .titulo {
+            margin-bottom: 45px !important;
+        }
+
+        /* Ajuste para posicionar o texto na altura da cabeça da doutora */
+        .hero-text-container h1 {
+            margin-top: -160px;
+            /* Eleva o título até a altura da cabeça */
+        }
+    }
+
+    .features-section {
+        background: url('./segunda-imagem.jpg') no-repeat center center;
+        /* Caminho da imagem */
+        background-size: cover;
+        /* Ajusta o tamanho da imagem */
+        padding: 150px 0;
+        /* Espaçamento vertical */
+        position: relative;
+    }
+
+    .features-section h3,
+    .features-section p {
+        margin-top: 20px;
+        color: #fff;
+        /* Cor branca para o texto */
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        /* Sombras para melhor contraste */
+    }
+
+    
 </style>
 
 <body>
@@ -78,7 +331,6 @@ body {
     <nav class="navbar navbar-expand-lg navbar-light" id="navbar"
         style="background: linear-gradient(90deg, #002d62, #0055ff);">
         <div class="container">
-            <!-- <a class="navbar-brand" href="#">Hexapp</a> -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -98,69 +350,49 @@ body {
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero text-white py-5" style="background: linear-gradient(90deg, #002d62, #0055ff);">
         <div class="container">
             <div class="row align-items-center">
-                <!-- Coluna para o texto e botões (à esquerda) -->
-                <div class="col-md-6">
-                    <h1 class="display-4" style="font-size: 19px; margin-top: -50px;">Software médico</h1>
-                    <p class="lead" style="font-size: 19px;">Sistema para clínicas e consultórios</p>
-                    <p style="font-size: 19px;">Mais agilidade, gestão e segurança</p>
-                    <a href="#teste-gratis" class="btn btn-success btn-lg">Teste Grátis</a>
+                <!-- Coluna com texto e botões -->
+                <div class="col-md-6 hero-text-container">
+                    <div class="hero-text-container">
+                        <h1 class="display-4 mb-3 titulo">Software médico</h1>
+                        <p class="lead"><b style="white-space: nowrap;">Sistema para clínicas e consultórios</b></p>
+                        <p style="white-space: nowrap;">Mais agilidade, gestão e segurança</p>
+                        <a href="#teste-gratis" class="btn btn-success btn-lg mt-3"
+                            style="border-radius: 25px; width: 205px;">Teste Grátis</a>
+                    </div>
 
-                    <!-- Botões lado a lado -->
-                    <div class="d-flex justify-content-start align-items-center gap-3" style="margin-top: 170px;">
-                        <button class="btn btn-light text-dark border me-2 d-flex align-items-center px-4"
-                            style="white-space: nowrap; width: 250px; max-width: 100%;">
-                            <span style="margin-right: 15px;">Profissional de saúde</span>
-                            <span class="d-inline-flex align-items-center justify-content-center" style="background-color: #00adca; color: white; font-size: 18px; 
-                        width: 30px; height: 30px; border-radius: 10px;">&#8594;</span>
+                    <div class="d-flex justify-content-start gap-3 mt-4 botoes-container">
+                        <button class="btn btn-light text-dark border btn-custom">
+                            <span>Profissional de saúde</span>
+                            <span class="arrow-circle">&#8594;</span>
                         </button>
-                        <button class="btn btn-light text-dark border me-2 d-flex align-items-center px-4"
-                            style="white-space: nowrap; width: 250px; max-width: 100%;">
-                            <span style="margin-right: 40px;">Recepcionista</span>
-                            <span class="d-inline-flex align-items-center justify-content-center" style="background-color:#00adca; color: white; font-size: 18px; 
-                        width: 30px; height: 30px; border-radius: 10px;">&#8594;</span>
+                        <button class="btn btn-light text-dark border btn-custom">
+                            <span>Recepcionista</span>
+                            <span class="arrow-circle">&#8594;</span>
                         </button>
-                        <button class="btn btn-light text-dark border d-flex align-items-center px-4"
-                            style="white-space: nowrap; width: 250px; max-width: 100%;">
-                            <span style="margin-right: 40px;">Administrador</span>
-                            <span class="d-inline-flex align-items-center justify-content-center" style="background-color:#00adca; color: white; font-size: 18px; 
-                        width: 30px; height: 30px; border-radius: 10px;">&#8594;</span>
+                        <button class="btn btn-light text-dark border btn-custom">
+                            <span>Administrador</span>
+                            <span class="arrow-circle">&#8594;</span>
                         </button>
                     </div>
                 </div>
 
-                <!-- Coluna para a imagem da doutora (à direita) -->
-                <div class="imagem">
-                    <!-- <img src="doutora.jpg" alt="Doutora" class="img-fluid"
-                        style="width: 390px; height: 590px; position: relative; margin-top: 90px;"> -->
+                <!-- Coluna com imagem da doutora -->
+                <div class="col-md-6 d-flex justify-content-center imagem-container">
+                    <div class="imagem"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="py-5 bg-light text-center">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-4">
-                    <img src="monitor.png" class="img-fluid" alt="Monitor">
-                </div>
-                <div class="col-md-4">
-                    <img src="tablet.png" class="img-fluid" alt="Tablet">
-                </div>
-                <div class="col-md-4">
-                    <img src="mobile.png" class="img-fluid" alt="Celular">
-                </div>
-            </div>
+    <section class="features-section text-white">
+        <div class="container text-center">
             <h3 class="mt-4">Transforme sua clínica</h3>
             <p class="lead">Descubra como nosso software médico pode revolucionar a gestão do seu consultório.</p>
         </div>
     </section>
-
-
 
 
     <!-- Resources Section -->
