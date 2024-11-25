@@ -392,59 +392,191 @@ body {
     
     } */
 
-    /* Resources Section */
+    /* Geral da seção */
     section.py-5 {
         background-color: #003366;
-        /* Cor de fundo do Hexapp */
         color: white;
-        /* Cor do texto */
         padding: 60px 0;
-        /* Distância superior e inferior */
     }
 
+    /* Texto "Explore recursos do Hexapp" */
+    section.py-5 h2 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    /* Título "Agendamento" */
     section.py-5 h3 {
         font-size: 2rem;
         font-weight: bold;
-        margin-bottom: 30px;
-        /* Espaço abaixo do título */
+        text-align: center;
+        margin-bottom: 20px;
     }
 
-    section.py-5 ul {
-        list-style-type: none;
-        /* Remove o estilo de lista padrão */
-        padding: 0;
-        /* Remove o preenchimento */
+    /* Linhas e Destaque */
+    .highlight-item {
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid white;
+        text-align: left;
     }
 
-    section.py-5 ul li {
-        font-size: 1.2rem;
-        margin-bottom: 10px;
-        /* Espaço entre os itens */
-    }
-
-    section.py-5 .btn {
+    /* Botão Centralizado */
+    .text-center .btn {
         border-radius: 25px;
-        /* Bordas arredondadas */
         padding: 12px 30px;
-        /* Aumenta o tamanho do botão */
         font-size: 1.1rem;
-        /* Tamanho da fonte */
-        text-transform: uppercase;
-        /* Deixa o texto do botão maiúsculo */
-        background-color: #ffffff;
-        /* Cor de fundo do botão */
+        background-color: white;
         color: #003366;
-        /* Cor do texto do botão */
         border: none;
-        transition: background-color 0.3s;
-        /* Animação para o efeito hover */
+        transition: background-color 0.3s ease-in-out;
     }
 
-    section.py-5 .btn:hover {
+    .text-center .btn:hover {
         background-color: #f1f1f1;
-        /* Efeito de hover para o botão */
-        color: #003366;
-        /* Cor do texto do botão no hover */
+    }
+
+    /* Área com Imagem */
+    .img-section {
+        height: 300px;
+        background-image: url('agendamento.jpg');
+        background-size: cover;
+        background-position: center;
+        border-radius: 10px;
+    }
+
+    /* Responsividade */
+    @media (min-width: 768px) {
+        .img-section {
+            height: 400px;
+        }
+    }
+
+    /* Geral da seção */
+    section.py-5 {
+        background-color: #ffffff;
+        color: #333;
+        padding: 60px 0;
+    }
+
+    /* Título "Atendimento Personalizado" */
+    section.py-5 h2 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    /* Texto descritivo */
+    section.py-5 p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        color: #555;
+        margin-bottom: 20px;
+    }
+
+    /* Área com Imagem à Direita */
+    .img-section-right {
+        width: 100%;
+        /* Garante que a imagem ocupe todo o espaço horizontal disponível */
+        max-width: 400px;
+        /* Limita a largura máxima da imagem */
+        height: auto;
+        /* Altura proporcional à largura */
+        background: url('atendimento.jpg') no-repeat center bottom;
+        background-size: contain;
+        /* Mostra a imagem inteira sem cortar */
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: 0 auto;
+        /* Centraliza a imagem dentro do contêiner */
+    }
+
+    /* Responsividade */
+    @media (min-width: 768px) {
+        .img-section-right {
+            height: 400px;
+            /* Ajusta dinamicamente em telas maiores */
+        }
+    }
+
+    /* Configuração da Seção */
+    section.image-left-section {
+        display: flex;
+        align-items: center;
+        height: 100vh;
+        /* Altura total da viewport */
+        background-color: #4A90E2;
+        /* Azul mais suave */
+    }
+
+    /* Imagem à esquerda */
+    section.image-left-section .image-container {
+        width: 50%;
+        /* Metade da largura */
+        height: 100%;
+        /* Ocupa toda a altura */
+        background-image: url('agendamento-2.jpg');
+        /* Imagem de fundo */
+        background-size: contain;
+        /* Mostra a imagem inteira */
+        background-repeat: no-repeat;
+        /* Evita repetições da imagem */
+        background-position: center;
+        /* Centraliza a imagem */
+    }
+
+    /* Texto à direita */
+    section.image-left-section .text-container {
+        width: 50%;
+        /* Metade da largura */
+        padding: 30px;
+        color: #ffffff;
+        /* Texto branco */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* Centraliza verticalmente */
+    }
+
+    section.image-left-section h2 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    section.image-left-section p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        margin-bottom: 20px;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+        section.image-left-section {
+            flex-direction: column;
+            /* Empilha os elementos */
+        }
+
+        section.image-left-section .image-container,
+        section.image-left-section .text-container {
+            width: 100%;
+            /* Cada elemento ocupa 100% da largura */
+        }
+
+        section.image-left-section .image-container {
+            height: 50vh;
+            /* Ajusta a altura da imagem em dispositivos menores */
+        }
+
+        section.image-left-section .text-container {
+            text-align: center;
+            /* Centraliza o texto */
+        }
     }
 </style>
 
@@ -523,35 +655,93 @@ body {
 
 
 
-
-
-
-    <!-- Resources Section -->
     <section class="py-5 text-white" style="background-color: #003366;">
-        <div class="container text-center">
-            <h3 class="mb-4" style="font-size: 2rem; font-weight: bold;">Explore os recursos do Hexapp</h3>
-            <ul class="list-unstyled mt-3">
-                <li style="font-size: 1.2rem; margin-bottom: 10px;">Agenda integrada ao prontuário</li>
-                <li style="font-size: 1.2rem; margin-bottom: 10px;">Agenda integrada ao financeiro</li>
-                <li style="font-size: 1.2rem; margin-bottom: 10px;">Mapas mensais de ocupação</li>
-                <li style="font-size: 1.2rem; margin-bottom: 10px;">Confirmação por WhatsApp</li>
-                <li style="font-size: 1.2rem; margin-bottom: 10px;">Módulo exclusivo de oportunidades</li>
-            </ul>
-            <a href="#começar" class="btn btn-light mt-3"
-                style="border-radius: 25px; padding: 12px 30px; font-size: 1.1rem;">
-                Começar
-            </a>
+        <div class="container">
+            <!-- Texto Centralizado no Meio -->
+            <div class="text-center mb-5">
+                <h2 style="font-size: 2.5rem; font-weight: bold;">Explore recursos do Hexapp</h2>
+            </div>
+
+            <div class="row align-items-center">
+                <!-- Conteúdo à Esquerda -->
+                <div class="col-md-6 text-center">
+                    <!-- Título Acima do Texto -->
+                    <h3 class="text-center mb-4" style="font-size: 2rem; font-weight: bold;">Agendamento</h3>
+
+                    <ul class="list-unstyled mt-3">
+                        <li class="highlight-item">Agenda integrada ao prontuário</li>
+                        <li class="highlight-item">Agenda integrada ao financeiro</li>
+                        <li class="highlight-item">Mapas mensais de ocupação</li>
+                        <li class="highlight-item">Confirmação por WhatsApp</li>
+                        <li class="highlight-item">Módulo exclusivo de oportunidades</li>
+                    </ul>
+
+                    <!-- Botão Alinhado ao Centro -->
+                    <div class="text-center mt-4">
+                        <a href="#começar" class="btn btn-light"
+                            style="border-radius: 25px; padding: 12px 30px; font-size: 1.1rem;">
+                            Começar
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Área com Imagem -->
+                <div class="col-md-6">
+                    <div class="img-section"></div>
+                </div>
+            </div>
         </div>
     </section>
 
 
-    <!-- Personalized Attendance Section -->
-    <section class="py-5 text-center">
+    <section class="py-5" style="background-color: #ffffff;">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Texto à Esquerda -->
+                <div class="col-md-6">
+                    <!-- Título -->
+                    <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">Atendimento Personalizado</h2>
+                    <!-- Texto abaixo do título -->
+                    <p style="font-size: 1.2rem; line-height: 1.8; color: #555;">
+                        Aqui, você terá todas as ferramentas para gerenciar pacientes de forma eficiente e segura.
+                        O módulo de atendimento organiza informações, emite documentos médicos rapidamente e permite
+                        adicionar formulários específicos. O prontuário é organizado com tags datadas para facilitar
+                        o acesso às informações, e a galeria de fotos completa a experiência de atendimento médico.
+                    </p>
+                </div>
+
+                <!-- Imagem à Direita -->
+                <div class="col-md-6">
+                    <div class="img-section-right"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="image-left-section">
+        <!-- Imagem à esquerda via CSS -->
+        <div class="image-container"></div>
+
+        <!-- Texto à direita -->
+        <div class="text-container">
+            <h2>Agendamento Simplificado</h2>
+            <p>
+                Aqui, você terá todas as ferramentas para gerenciar pacientes de forma eficiente e segura.
+                Organize horários, emita documentos médicos rapidamente e acesse prontuários com facilidade.
+            </p>
+        </div>
+    </section>
+
+
+
+
+    <!-- <section class="py-5 text-center">
         <div class="container">
             <h3>Atendimento personalizado</h3>
             <p class="lead">Aqui você tem todas as ferramentas para gerenciar pacientes de forma eficiente.</p>
         </div>
-    </section>
+    </section> -->
 
     <!-- Footer -->
     <footer class="bg-primary text-white text-center py-3">
