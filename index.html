@@ -73,7 +73,7 @@ body {
         /* Organiza texto e seta */
         align-items: center;
         /* Centraliza verticalmente */
-        padding: 0 15px;
+        padding: 0 30px;
         /* Espaçamento interno */
         white-space: nowrap;
         /* Impede quebra de linha */
@@ -118,24 +118,92 @@ body {
         background-color: #008bad;
     }
 
+    .hero {
+        position: relative;
+        z-index: 1;
+        /* Garante que a hero-section fique acima */
+        padding-bottom: 100px;
+        /* Dá espaço suficiente para a imagem */
+    }
+
     .imagem {
         background: url('./doutora.jpg') no-repeat center bottom;
         background-size: contain;
         width: 390px;
         height: 590px;
-        margin-top: -50px;
-        position: relative;
-        z-index: -1;
-        /* Necessário para o posicionamento */
+        position: absolute;
+        /* Permite posicionar a imagem livremente */
+        bottom: 0;
+        /* Garante que a parte inferior da imagem fique alinhada */
+        /* right: 50px; */
+        /* Ajuste horizontal */
+        z-index: 1;
+        /* Abaixo da segunda seção */
     }
 
-    /* Estilo do contêiner da doutora */
-    .imagem-container {
-        position: relative;
-        margin-top: 140px;
-        /* Movendo a doutora para baixo */
-        z-index: 0;
-        /* Garantindo a sobreposição correta */
+    .features-section {
+        display: flex;
+        flex-direction: column;
+        /* Organiza imagem e texto verticalmente */
+        align-items: center;
+        padding: 20px;
+        background-color: #f8f9fa;
+    }
+
+    .image-container {
+        width: 100%;
+        max-width: 700px;
+        /* Define o tamanho máximo da imagem */
+        height: 400px;
+        /* Altura fixa para boa visualização */
+        background-image: url('segunda-imagem.jpg');
+        /* Substitua pela URL da imagem */
+        background-size: cover;
+        /* Garante que a imagem preencha o container */
+        background-position: center;
+        border-radius: 10px;
+        /* Bordas arredondadas */
+        margin-bottom: 20px;
+        /* Espaço abaixo da imagem */
+    }
+
+    .text-container {
+        max-width: 600px;
+        /* Limita a largura dos textos para melhor organização */
+        text-align: center;
+        /* Centraliza os textos */
+    }
+
+    .text-container h3 {
+        font-size: 1.8rem;
+        /* Tamanho do título */
+        color: #333;
+        margin-bottom: 15px;
+    }
+
+    .text-container p {
+        font-size: 1rem;
+        line-height: 1.6;
+        /* Melhor legibilidade */
+        color: #555;
+    }
+
+
+    @media (max-width: 768px) {
+        .image-container {
+            max-width: 100%;
+            /* Imagem ocupa a largura da tela */
+            height: auto;
+            /* Altura ajustada proporcionalmente */
+        }
+
+        .text-container h3 {
+            font-size: 1.5rem;
+        }
+
+        .text-container p {
+            font-size: 0.9rem;
+        }
     }
 
 
@@ -266,6 +334,7 @@ body {
     @media (min-width: 769px) {
         .hero-text-container h1 {
             font-size: 45px;
+            margin-top: -10px !important;
         }
 
         .hero-text-container p {
@@ -286,12 +355,12 @@ body {
             /* Largura automática nos desktops */
         }
 
-        .imagem-container .imagem {
+        /* .imagem-container .imagem {
             background: url('./doutora.jpg') no-repeat center bottom;
             background-size: contain;
             width: 390px;
             height: 590px;
-        }
+        } */
 
         .titulo {
             margin-bottom: 45px !important;
@@ -304,13 +373,13 @@ body {
         }
     }
 
-    .features-section {
+    /* .features-section {
         background: url('./segunda-imagem.jpg') no-repeat center center;
-        /* Caminho da imagem */
+    
         background-size: cover;
-        /* Ajusta o tamanho da imagem */
+    
         padding: 150px 0;
-        /* Espaçamento vertical */
+    
         position: relative;
     }
 
@@ -318,12 +387,65 @@ body {
     .features-section p {
         margin-top: 20px;
         color: #fff;
-        /* Cor branca para o texto */
+    
         text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-        /* Sombras para melhor contraste */
+    
+    } */
+
+    /* Resources Section */
+    section.py-5 {
+        background-color: #003366;
+        /* Cor de fundo do Hexapp */
+        color: white;
+        /* Cor do texto */
+        padding: 60px 0;
+        /* Distância superior e inferior */
     }
 
-    
+    section.py-5 h3 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 30px;
+        /* Espaço abaixo do título */
+    }
+
+    section.py-5 ul {
+        list-style-type: none;
+        /* Remove o estilo de lista padrão */
+        padding: 0;
+        /* Remove o preenchimento */
+    }
+
+    section.py-5 ul li {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        /* Espaço entre os itens */
+    }
+
+    section.py-5 .btn {
+        border-radius: 25px;
+        /* Bordas arredondadas */
+        padding: 12px 30px;
+        /* Aumenta o tamanho do botão */
+        font-size: 1.1rem;
+        /* Tamanho da fonte */
+        text-transform: uppercase;
+        /* Deixa o texto do botão maiúsculo */
+        background-color: #ffffff;
+        /* Cor de fundo do botão */
+        color: #003366;
+        /* Cor do texto do botão */
+        border: none;
+        transition: background-color 0.3s;
+        /* Animação para o efeito hover */
+    }
+
+    section.py-5 .btn:hover {
+        background-color: #f1f1f1;
+        /* Efeito de hover para o botão */
+        color: #003366;
+        /* Cor do texto do botão no hover */
+    }
 </style>
 
 <body>
@@ -351,11 +473,11 @@ body {
     </nav>
 
     <section class="hero text-white py-5" style="background: linear-gradient(90deg, #002d62, #0055ff);">
-        <div class="container">
+        <div class="container" style="margin-bottom: 70px;">
             <div class="row align-items-center">
                 <!-- Coluna com texto e botões -->
                 <div class="col-md-6 hero-text-container">
-                    <div class="hero-text-container">
+                    <div class="hero-text-container" style="margin-bottom: 65%;">
                         <h1 class="display-4 mb-3 titulo">Software médico</h1>
                         <p class="lead"><b style="white-space: nowrap;">Sistema para clínicas e consultórios</b></p>
                         <p style="white-space: nowrap;">Mais agilidade, gestão e segurança</p>
@@ -380,35 +502,48 @@ body {
                 </div>
 
                 <!-- Coluna com imagem da doutora -->
-                <div class="col-md-6 d-flex justify-content-center imagem-container">
-                    <div class="imagem"></div>
+                <div class="col-md-6 d-flex justify-content-end align-items-center imagem-container">
+                    <div class="imagem" style="max-width: 80%; margin-left: -30px;"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="features-section text-white">
-        <div class="container text-center">
+
+    <section class="features-section">
+        <div class="image-container"></div>
+        <div class="text-container text-center">
             <h3 class="mt-4">Transforme sua clínica</h3>
-            <p class="lead">Descubra como nosso software médico pode revolucionar a gestão do seu consultório.</p>
+            <p class="lead mt-3">
+                Descubra como nosso sistema pode trazer mais eficiência e praticidade para sua gestão médica.
+                Simplifique processos e melhore o atendimento aos seus pacientes.
+            </p>
         </div>
     </section>
+
+
+
+
 
 
     <!-- Resources Section -->
     <section class="py-5 text-white" style="background-color: #003366;">
         <div class="container text-center">
-            <h3>Explore recursos do Hexapp</h3>
+            <h3 class="mb-4" style="font-size: 2rem; font-weight: bold;">Explore os recursos do Hexapp</h3>
             <ul class="list-unstyled mt-3">
-                <li>Agenda integrada ao prontuário</li>
-                <li>Agenda integrada ao financeiro</li>
-                <li>Mapas mensais de ocupação</li>
-                <li>Confirmação por WhatsApp</li>
-                <li>Módulo exclusivo de oportunidades</li>
+                <li style="font-size: 1.2rem; margin-bottom: 10px;">Agenda integrada ao prontuário</li>
+                <li style="font-size: 1.2rem; margin-bottom: 10px;">Agenda integrada ao financeiro</li>
+                <li style="font-size: 1.2rem; margin-bottom: 10px;">Mapas mensais de ocupação</li>
+                <li style="font-size: 1.2rem; margin-bottom: 10px;">Confirmação por WhatsApp</li>
+                <li style="font-size: 1.2rem; margin-bottom: 10px;">Módulo exclusivo de oportunidades</li>
             </ul>
-            <a href="#começar" class="btn btn-light mt-3">Começar</a>
+            <a href="#começar" class="btn btn-light mt-3"
+                style="border-radius: 25px; padding: 12px 30px; font-size: 1.1rem;">
+                Começar
+            </a>
         </div>
     </section>
+
 
     <!-- Personalized Attendance Section -->
     <section class="py-5 text-center">
